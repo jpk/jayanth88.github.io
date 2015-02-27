@@ -1,9 +1,9 @@
 $(document).ready(function()
 {
-	applyHeader();
-	applyResize();
+	// applyHeader();
+	// applyResize();
 	setupColorDivision();
-	scrollManager();
+	// scrollManager();
 });
 
 
