@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
 	// applyHeader();
-	// applyResize();
+	applyResize();
 	setupColorDivision();
 	// scrollManager();
 });
@@ -56,20 +56,16 @@ function applyResize()
 {
 	$(window).on('resize', function()
 	{
-		lnStickyNavigation = $('.scroll-down').offset().top + 20;
-		alert($(window).height());
-		$('.mag').css({ height: ($(window).height()) +'px' });
+		setupColorDivision();
 	});
 }
 
 function setupColorDivision(){
-	changeBackgroundColor($('.intro'),'#404C88');
-	changeBackgroundColor($('.aboutMe'),'#350A4D');
-	changeBackgroundColor($('.experience'),'#220A4D');
-	changeBackgroundColor($('.skills'),'#57B586');
-	changeBackgroundColor($('.projects'),'#C2CB86');
-	changeBackgroundColor($('.contact'),'#CBAE86');
-
+	changeBackgroundColor($('#aboutMe'),'#404C88');
+	changeBackgroundColor($('#experience'),'#b1a8c0');
+	changeBackgroundColor($('#projects'),'#57B586');
+	changeBackgroundColor($('#skills'),'#C2CB86');
+	changeBackgroundColor($('#contactUs'),'#BD9866');
 }
 
 function changeBackgroundColor(contentNav,color){
@@ -79,12 +75,13 @@ function changeBackgroundColor(contentNav,color){
 	}
 
 	var scrolldiv = $('.change');
-
-
+	var navBar		= $('.navbar');
 	$(window).scroll(function() {
-	        if($(this).scrollTop() >= setPoint ) {
+	    if($(this).scrollTop() >= setPoint-100 ) {
 				scrolldiv.css("transition","background-color 0.3s ease");
 				scrolldiv.css("background-color", color);
+				navBar.css("transition","background-color 0.3s ease");
+				navBar.css("background-color", color);
 			}
 	})
 }
