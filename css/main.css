@@ -24,6 +24,11 @@ body{
 	color:#333;
 }
 
+div {
+	/*border-style: solid;
+  border-width: 1px;
+	border-color:BLACK;*/
+}
 .navbar {
 	font-size:small;
 
@@ -31,11 +36,6 @@ body{
 
 .navbar-fixed-top{
 	background-color:rgb(0,0,0,0);
-}
-
-footer {
-	position:absolute;
-	bottom:40px;
 }
 
 .division {
@@ -77,6 +77,7 @@ footer {
 }
 
 .intro-head{
+	font-family: Roboto;
 	padding-top:10%;
 	color:rgb(228, 222, 222);
 }
@@ -90,6 +91,19 @@ footer {
 	padding-top:20%;
 }
 
+.eachJob{
+	padding-top:2%;
+}
+
+.companyName{
+	font-weight:bold;
+}
+
+.positionName{
+	font-style: italic;
+}
+
+
 .project-text{
 	padding-top:20%;
 }
@@ -97,6 +111,7 @@ footer {
 
 .contactUs-text{
 	padding-top:10%;
+	height:70%;
 }
 
 .skills-text{

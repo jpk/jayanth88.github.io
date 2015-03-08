@@ -1,56 +1,28 @@
 $(document).ready(function()
 {
-	// applyHeader();
 	applyResize();
 	setupColorDivision();
-	// scrollManager();
+
+	shufflePeriodically();
+	//
 });
 
+function shufflePeriodically(){
+	var nameSpace = $("#shuffleMe");
+	nameSpace.shuffleLetters();
+	var tagLine=["I am huge fan of Lord of the Rings!",
+							"I enjoy playing with colors!",
+							"I prefer staying outdoors,if not staring at a screen",
+							"I prefer playing as a tank in DOTA & LOL",
+							"I enjoy designing & front-end development",
+							"Coldplay,Mettalica,Justin Timberlake etc... are just a few of my favorite bands/singers"];
+	var i=0;
 
-function scrollManager(){
-	var last_scroll_position=0;
-	scroll=false;
-	nameContainer=1;
-	size =6;
-	scrollTop=$(this).scrollTop();
-
-	$(window).scroll(function(event){
-	    var st = $(this).scrollTop();
-	   	console.log(last_scroll_position+" "+st+" "+scroll+" "+nameContainer+" "+scrollTop);
-
-
-			if (st > last_scroll_position){
-				if (scroll) return;
-				nameContainer = (nameContainer+1 > size) ? nameContainer : (nameContainer +1);
-				last_scroll_position = scrollTop;
-				scrollTop=$("#pointer"+nameContainer).offset().top;
-				$('html, body').animate({
-						scrollTop: scrollTop
-					        }, 1000);
-				scroll = true;
-			}else if(st < last_scroll_position){
-				if (scroll) return;
-				nameContainer = (nameContainer-1 < 0) ? 0 : (nameContainer -1);
-				last_scroll_position = scrollTop;
-				scrollTop=$("#pointer"+nameContainer).offset().top;
-				$('html, body').animate({
-						scrollTop: scrollTop
-									}, 1000);
-				scroll = true;
-			}else if(st == scrollTop){
-				scroll = false;
-			}
-			last_scroll_position = scrollTop;
-
-	});
+	setInterval(function(){
+										nameSpace.shuffleLetters( {"text": tagLine[ i % (tagLine.length) ] });
+										i=i+1;
+									}, 7000);
 }
-
-function applyHeader()
-{
-	$('.mag').css({ height: ($(window).height()) +'px' });
-
-}
-
 
 function applyResize()
 {
@@ -85,3 +57,96 @@ function changeBackgroundColor(contentNav,color){
 			}
 	})
 }
+
+function randomCharGenerator(type){
+	var stringPool="";
+
+	if(type=="lowerCase"){
+		stringPool = "abcdefghijklmnopqrstuvwxyz0123456789";
+	}else if(type=="upperCase"){
+		stringPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	}else if(type=="symbol"){
+		stringPool = ",.?/\\(^)![]{}*&^%$#'\"";
+	}
+
+	var arr = stringPool.split('');
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+
+(function($){
+
+    $.fn.shuffleLetters = function(prop){
+
+        // Handling default arguments
+        var options = $.extend({
+						"step": 8,
+						"fps"	: 25,
+						"text": ""
+        },prop)
+
+        return this.each(function(){
+
+						var page= $(this);
+						    str="";
+
+						if(options.text) {
+								str=options.text.split('');
+						}
+						else{
+								str=page.text().split('');
+						}
+
+
+						var types=[];
+						var letters=[];
+
+						for(var i=0;i<str.length;i++){
+							var ch=str[i];
+
+							if(ch==" "){
+								types[i]="space";
+								continue;
+							}else if(/[a-z]/.test(ch)){
+								types[i]="lowerCase";
+							}else if(/[A-Z]/.test(ch)){
+								types[i]="upperCase";
+							}else{
+								types[i]="symbol";
+							}
+
+							letters.push(i);
+						}
+
+						page.html("");
+
+						(function shuffle(start){
+
+							var i,len=letters.length,strCopy=str.slice(0);
+
+							if(start>len){
+								return;
+							}
+
+							for(i=Math.max(start,0);i<=len;i++){
+
+									if(i < start+options.step){
+										strCopy[letters[i]]=randomCharGenerator(types[letters[i]]);
+									}else{
+										strCopy[letters[i]]="";
+									}
+
+									page.text(strCopy.join(""));
+							}
+
+						setTimeout(function(){
+              shuffle(start+1);
+            },1000/options.fps);
+
+						})(-options.step);
+
+        });
+    };
+
+
+})(jQuery);
