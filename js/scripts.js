@@ -4,6 +4,7 @@ $(document).ready(function()
 	setupColorDivision();
 
 	shufflePeriodically();
+	populateSkills();
 	//
 });
 
@@ -56,6 +57,52 @@ function changeBackgroundColor(contentNav,color){
 				navBar.css("background-color", color);
 			}
 	})
+}
+
+function populateSkills(){
+	var leftSkillPane= $("#leftSkillPane");
+	var rightSkillPane= $("#rightSkillPane");
+
+	var leftSkills = [
+								{value:"JAVA",rating:4.5},
+								{value:"Python",rating:2},
+								{value:"Javascript",rating:3},
+								{value:"HTML",rating:3},
+								{value:"CSS",rating:3},
+								{value:"APEX",rating:3},
+								{value:"PL/SQL",rating:3.5},
+								]
+
+	var rightSkills = [
+								{value:"Postgres",rating:4.5},
+								{value:"Salesforce.com",rating:4.5},
+								{value:"MVC",rating:4.5},
+								{value:"Data Structures",rating:2},
+								{value:"Algorithms",rating:3},
+								{value:"OOPS",rating:3},
+								{value:"Machine Learning",rating:3},
+								]
+
+	for(i=0;i<leftSkills.length;i++){
+		addSkill(leftSkillPane,leftSkills[i]);
+	}
+
+	for(i=0;i<rightSkills.length;i++){
+		addSkill(rightSkillPane,rightSkills[i]);
+	}
+}
+
+function addSkill(givenDiv,givenSkill){
+	var ratingDisplay="";
+	var i=0;
+	for(;i<parseInt(givenSkill.rating,10);	i++) {
+		ratingDisplay=ratingDisplay+"<i class=\"fa fa-star\"></i>";
+	}
+	if(givenSkill.rating > i){
+		ratingDisplay=ratingDisplay+"<i class=\"fa fa-star-half\"></i>"
+	}
+
+	givenDiv.append("<div class=\"row\"><div class=\"col-xs-6\"> "+givenSkill.value+"</div><div class=\"col-xs-6\">"+ratingDisplay+"</div>");
 }
 
 function randomCharGenerator(type){

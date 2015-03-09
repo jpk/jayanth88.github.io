@@ -113,12 +113,40 @@ div {
 }
 
 .contactUs-text{
-	padding-top:10%;
+	padding-top:20%;
 	height:70%;
 	color:rgb(228, 222, 222);
 }
 
 .skills-text{
-	padding-top:10px;
+	padding-top:20px;
 	color:rgb(228, 222, 222);
+}
+
+blockquote {
+    padding: 6px 16px;
+    border: none;
+    quotes: "\201C" "\201D";
+    display: inline-block;
+    position: relative;
+		font-size:200%;
+		color:#C5C9C8
+}
+
+blockquote:before {
+    content: open-quote;
+		color:WHITE;
+    font-weight: bold;
+		font-size:1.5em;
+    position:absolute;
+    top:0;
+    left: 0;
+}
+blockquote:after {
+    content: close-quote;
+    font-weight: bold;
+		font-size:1.5em;
+		color:WHITE;
+    position:absolute;
+    bottom:0; right: 0;
 }
