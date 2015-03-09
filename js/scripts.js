@@ -11,12 +11,12 @@ $(document).ready(function()
 function shufflePeriodically(){
 	var nameSpace = $("#shuffleMe");
 	nameSpace.shuffleLetters();
-	var tagLine=["I am huge fan of Lord of the Rings!",
-							"I enjoy playing with colors!",
-							"I prefer staying outdoors,if not staring at a screen",
-							"I prefer playing as a tank in DOTA & LOL",
+	var tagLine=["I am a huge fan of Lord of the Rings!",
+							"Color schemes & typography are topics of my interest!",
+							"When not staring at a screen, I am usually at the gym.",
+							"I prefer playing as a tank in LOL",
 							"I enjoy designing & front-end development",
-							"Coldplay,Mettalica,Justin Timberlake etc... are just a few of my favorite bands/singers"];
+							"Coldplay,Mettalica,Linkin Park.. etc. are just a few of my favorite music bands"];
 	var i=0;
 
 	setInterval(function(){
