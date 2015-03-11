@@ -68,8 +68,8 @@ div {
 
 .btn-outline {
 	margin-top: 15px;
-	border: solid 2px #000;
-	color: #000;
+	border: solid 2px #eee;
+	color: #eee;
 	transition: all .3s ease-in-out;
 }
 
@@ -102,6 +102,7 @@ div {
 
 .name{
 	font-size:0.9em;
+	text-align:justify;
 }
 
 .companyText{
@@ -315,4 +316,13 @@ blockquote:after {
 
 .timeline-body-block{
 	/*display:inline;*/
+}
+
+.fa-university{
+		margin-top:3px;
+}
+
+
+.fa-briefcase{
+	margin-top:4px;
 }
