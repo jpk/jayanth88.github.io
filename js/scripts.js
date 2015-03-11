@@ -5,7 +5,7 @@ $(document).ready(function()
 
 	shufflePeriodically();
 	populateSkills();
-	//
+	// scrollAnimation();
 });
 
 function shufflePeriodically(){
@@ -16,7 +16,8 @@ function shufflePeriodically(){
 							"When not staring at a screen, I am usually at the gym.",
 							"I prefer playing as a tank in LOL",
 							"I enjoy designing & front-end development",
-							"Coldplay,Mettalica,Linkin Park.. etc. are just a few of my favorite music bands"];
+							"Coldplay,Mettalica,Linkin Park.. etc. are just a few of my favorite music bands",
+							"Software Developer."];
 	var i=0;
 
 	setInterval(function(){
@@ -65,22 +66,34 @@ function populateSkills(){
 
 	var leftSkills = [
 								{value:"JAVA",rating:4.5},
-								{value:"Python",rating:2},
+								{value:"C++",rating:3.5},
+								{value:"JAVA",rating:3.5},
+								{value:"Python",rating:3},
+								{value:"PL/SQL",rating:3.5},
 								{value:"Javascript",rating:3},
+								{value:"jQuery",rating:3},
 								{value:"HTML",rating:3},
 								{value:"CSS",rating:3},
 								{value:"APEX",rating:3},
-								{value:"PL/SQL",rating:3.5},
+								{value:"VisualForce",rating:3},
+								{value:"Objective-C",rating:2.5},
+								{value:"JSP",rating:3},
 								]
 
 	var rightSkills = [
 								{value:"Postgres",rating:4.5},
+								{value:"Adobe Photoshop",rating:4},
+								{value:"Android",rating:3},
+								{value:"MongoDB",rating:3},
+								{value:"IOS",rating:3},
 								{value:"Salesforce.com",rating:4.5},
+								{value:"AWS",rating:3},
+								{value:"Rational Function Tester",rating:3},
 								{value:"MVC",rating:4.5},
 								{value:"Data Structures",rating:2},
 								{value:"Algorithms",rating:3},
 								{value:"OOPS",rating:3},
-								{value:"Machine Learning",rating:3},
+								{value:"Machine Learning",rating:3}
 								]
 
 	for(i=0;i<leftSkills.length;i++){
@@ -103,6 +116,10 @@ function addSkill(givenDiv,givenSkill){
 	}
 
 	givenDiv.append("<div class=\"row\"><div class=\"col-xs-6\"> "+givenSkill.value+"</div><div class=\"col-xs-6\">"+ratingDisplay+"</div>");
+}
+
+function scrollAnimation(){
+
 }
 
 function randomCharGenerator(type){

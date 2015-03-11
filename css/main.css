@@ -100,6 +100,10 @@ div {
 	/*font-weight:bold;*/
 }
 
+.name{
+	font-size:0.9em;
+}
+
 .companyText{
 	padding-top:20px;
 }
@@ -198,6 +202,7 @@ blockquote:after {
   position: relative;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	border-radius: 25px;
 }
 .timeline > li > .timeline-panel:before {
   position: absolute;
@@ -297,7 +302,17 @@ blockquote:after {
 	width:170px;
 	text-align:right;
 }
+
 .text-muted{
 	padding-left:30px
 }
+
 /* Timeline */
+
+.timeline-body{
+	/*display:none;*/
+}
+
+.timeline-body-block{
+	/*display:inline;*/
+}
