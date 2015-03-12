@@ -6,6 +6,7 @@ $(document).ready(function()
 	shufflePeriodically();
 	populateSkills();
 	// scrollAnimation();
+	activeNavBarOptions();
 });
 
 function shufflePeriodically(){
@@ -36,9 +37,9 @@ function applyResize()
 
 function setupColorDivision(){
 	changeBackgroundColor($('#aboutMe'),'#404C88');
-	changeBackgroundColor($('#experience'),'#b1a8c0');
-	changeBackgroundColor($('#projects'),'#57B586');
-	changeBackgroundColor($('#skills'),'#C2CB86');
+	changeBackgroundColor($('#experience'),'#665280');
+	changeBackgroundColor($('#projects'),'#4DA177');
+	changeBackgroundColor($('#skills'),'#ABB06F');
 	changeBackgroundColor($('#contactUs'),'#BD9866');
 }
 
@@ -50,14 +51,18 @@ function changeBackgroundColor(contentNav,color){
 
 	var scrolldiv = $('.change');
 	var navBar		= $('.navbar');
+	var nav				= $('nav');
 	$(window).scroll(function() {
 	    if($(this).scrollTop() >= setPoint-100 ) {
 				scrolldiv.css("transition","background-color 0.3s ease");
 				scrolldiv.css("background-color", color);
-				navBar.css("transition","background-color 0.3s ease");
-				navBar.css("background-color", color);
 			}
 	})
+}
+
+function activeNavBarOptions(){
+	// nav.find("a:contains('aboutMe')").addClass('active');
+	$("a:contains('Home')").parent().addClass('active');
 }
 
 function populateSkills(){

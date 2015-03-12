@@ -326,3 +326,7 @@ blockquote:after {
 .fa-briefcase{
 	margin-top:4px;
 }
+
+.active{
+	border-bottom:2px solid #93C5D0;
+}
