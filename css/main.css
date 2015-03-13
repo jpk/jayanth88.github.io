@@ -329,4 +329,5 @@ blockquote:after {
 
 .active{
 	border-bottom:2px solid #93C5D0;
+	background-color: #e7e7e7;
 }

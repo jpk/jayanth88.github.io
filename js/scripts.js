@@ -1,13 +1,21 @@
 $(document).ready(function()
 {
-	applyResize();
-	setupColorDivision();
+	var divColors=[
+								['#intro','#404C88'],
+								['#aboutMe','#404C88'],
+								['#experience','#665280'],
+								['#projects','#4DA177'],
+								['#skills','#ABB06F'],
+								['#contactUs','#BD9866'],
+									];
 
+	applyResize();
+	setupColorDivision(divColors);
 	shufflePeriodically();
 	populateSkills();
-	// scrollAnimation();
 	activeNavBarOptions();
 });
+
 
 function shufflePeriodically(){
 	var nameSpace = $("#shuffleMe");
@@ -35,12 +43,10 @@ function applyResize()
 	});
 }
 
-function setupColorDivision(){
-	changeBackgroundColor($('#aboutMe'),'#404C88');
-	changeBackgroundColor($('#experience'),'#665280');
-	changeBackgroundColor($('#projects'),'#4DA177');
-	changeBackgroundColor($('#skills'),'#ABB06F');
-	changeBackgroundColor($('#contactUs'),'#BD9866');
+function setupColorDivision(divColors){
+	for(var i=0;i<divColors.length;i++){
+		changeBackgroundColor($(divColors[i][0]),divColors[i][1]);
+	}
 }
 
 function changeBackgroundColor(contentNav,color){
@@ -56,12 +62,17 @@ function changeBackgroundColor(contentNav,color){
 	    if($(this).scrollTop() >= setPoint-100 ) {
 				scrolldiv.css("transition","background-color 0.3s ease");
 				scrolldiv.css("background-color", color);
+
 			}
-	})
+			if($(this).scrollTop() > setPoint -100 && $(this).scrollTop() < (contentNav.offset().top+contentNav.length) ) {
+					nav.find("a").parent().removeClass('active');
+					var loc="a[href='#"+contentNav.attr('id')+"']";
+					nav.find(loc).parent().addClass('active');
+			}
+	});
 }
 
 function activeNavBarOptions(){
-	// nav.find("a:contains('aboutMe')").addClass('active');
 	$("a:contains('Home')").parent().addClass('active');
 }
 
@@ -123,9 +134,6 @@ function addSkill(givenDiv,givenSkill){
 	givenDiv.append("<div class=\"row\"><div class=\"col-xs-6\"> "+givenSkill.value+"</div><div class=\"col-xs-6\">"+ratingDisplay+"</div>");
 }
 
-function scrollAnimation(){
-
-}
 
 function randomCharGenerator(type){
 	var stringPool="";
