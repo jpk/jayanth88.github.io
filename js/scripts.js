@@ -4,8 +4,8 @@ $(document).ready(function()
 								['#intro','#404C88'],
 								['#aboutMe','#404C88'],
 								['#experience','#665280'],
-								['#projects','#4DA177'],
-								['#skills','#ABB06F'],
+								['#projects','#307854'],
+								['#skills','#969C57'],
 								['#contactUs','#BD9866'],
 									];
 
@@ -128,7 +128,12 @@ function addSkill(givenDiv,givenSkill){
 		ratingDisplay=ratingDisplay+"<i class=\"fa fa-star\"></i>";
 	}
 	if(givenSkill.rating > i){
-		ratingDisplay=ratingDisplay+"<i class=\"fa fa-star-half\"></i>"
+		ratingDisplay=ratingDisplay+"<i class=\"fa fa-star-half-o\"></i>";
+		i++;
+	}
+
+	for(;i<5;i++){
+		ratingDisplay=ratingDisplay+"<i class=\"fa fa-star-o\"></i>";
 	}
 
 	givenDiv.append("<div class=\"row\"><div class=\"col-xs-6\"> "+givenSkill.value+"</div><div class=\"col-xs-6\">"+ratingDisplay+"</div>");

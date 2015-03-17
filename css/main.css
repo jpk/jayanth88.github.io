@@ -105,6 +105,15 @@ div {
 	text-align:justify;
 }
 
+.navbar-brand{
+	
+}
+.name-details{
+	font-size:0.9em;
+	text-align:justify;
+	color:#999;
+}
+
 .companyText{
 	padding-top:20px;
 }
@@ -305,7 +314,8 @@ blockquote:after {
 }
 
 .text-muted{
-	padding-left:30px
+	padding-left:30px;
+	color:#222;
 }
 
 /* Timeline */
@@ -331,3 +341,13 @@ blockquote:after {
 	border-bottom:2px solid #93C5D0;
 	background-color: #e7e7e7;
 }
+
+.circular {
+	width: 150px;
+	height: 150px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	z-index: 4;
+	float:right;
+	}
