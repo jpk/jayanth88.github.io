@@ -41,7 +41,7 @@ div {
 .division {
 	width: 100%;
 	min-height: 100%;
-	/*border: 2px solid;*/
+		/*border: 2px solid;*/
 }
 
 .jumbotron {
@@ -106,7 +106,7 @@ div {
 }
 
 .navbar-brand{
-	
+
 }
 .name-details{
 	font-size:0.9em;
@@ -350,4 +350,8 @@ blockquote:after {
 	-moz-border-radius: 150px;
 	z-index: 4;
 	float:right;
+	}
+
+.footer-below{
+	font-size:0.8em;
 	}
