@@ -110,7 +110,7 @@ div {
 }
 .name-details{
 	font-size:0.9em;
-	text-align:justify;
+	text-align:right;
 	color:#999;
 }
 
@@ -145,7 +145,7 @@ blockquote {
     display: inline-block;
     position: relative;
 		font-size:200%;
-		color:#C5C9C8
+		color:#777;
 }
 
 blockquote:before {
@@ -355,3 +355,7 @@ blockquote:after {
 .footer-below{
 	font-size:0.8em;
 	}
+
+.footer-text{
+	color:#777;
+}

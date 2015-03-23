@@ -1,13 +1,13 @@
 $(document).ready(function()
 {
 	var divColors=[
-								['#intro','#404C88'],
-								['#aboutMe','#404C88'],
-								['#experience','#665280'],
-								['#projects','#307854'],
-								['#skills','#969C57'],
-								['#contactUs','#BD9866'],
-									];
+									['#intro','#404C88'],
+									['#aboutMe','#404C88'],
+									['#experience','#E3817F'],
+									['#projects','#307854'],
+									['#skills','#665280'],
+									['#contactUs','#CCBC62'],
+								];
 
 	applyResize();
 	setupColorDivision(divColors);
@@ -72,12 +72,15 @@ function changeBackgroundColor(contentNav,color){
 	var navBar		= $('.navbar');
 	var nav				= $('nav');
 	$(window).scroll(function() {
-	    if($(this).scrollTop() >= setPoint-100 ) {
-				scrolldiv.css("transition","background-color 0.3s ease");
-				scrolldiv.css("background-color", color);
-
-			}
+	    // if($(this).scrollTop() >= setPoint-100 ) {
+			// 	scrolldiv.css("transition","background-color 0.3s ease");
+			// 	scrolldiv.css("background-color", color);
+			//
+			// }
 			if($(this).scrollTop() > setPoint -100 && $(this).scrollTop() < (contentNav.offset().top+contentNav.length) ) {
+					scrolldiv.css("transition","background-color 0.3s ease");
+					scrolldiv.css("background-color", color);
+
 					nav.find("a").parent().removeClass('active');
 					var loc="a[href='#"+contentNav.attr('id')+"']";
 					nav.find(loc).parent().addClass('active');
@@ -96,7 +99,7 @@ function populateSkills(){
 	var leftSkills = [
 								{value:"JAVA",rating:4.5},
 								{value:"C++",rating:3.5},
-								{value:"JAVA",rating:3.5},
+								{value:"C",rating:3.5},
 								{value:"Python",rating:3},
 								{value:"PL/SQL",rating:3.5},
 								{value:"Javascript",rating:3},
