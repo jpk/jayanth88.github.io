@@ -103,7 +103,6 @@ function populateSkills(){
 								{value:"Python",rating:3},
 								{value:"PL/SQL",rating:3.5},
 								{value:"Javascript",rating:3},
-								{value:"jQuery",rating:3},
 								{value:"HTML",rating:3},
 								{value:"CSS",rating:3},
 								{value:"APEX",rating:3},
