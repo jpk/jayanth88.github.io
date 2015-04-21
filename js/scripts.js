@@ -3,7 +3,7 @@ $(document).ready(function()
 	var divColors=[
 									['#intro','#404C88'],
 									['#aboutMe','#404C88'],
-									['#experience','#E3817F'],
+									['#experience','#984342'],
 									['#projects','#307854'],
 									['#skills','#665280'],
 									['#contactUs','#CCBC62'],
