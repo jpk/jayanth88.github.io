@@ -22,13 +22,14 @@ body{
 	font-family: Helvetica;
 	font-weight: 200;
 	color:#fff;
+	background-color: #0e2329;
 }
 
-div {
-		/*border-style: solid;
+/*div {
+		border-style: solid;
 	  border-width: 1px;
-		border-color:BLACK;*/
-}
+		border-color:BLACK;
+}*/
 .navbar {
 	font-size:small;
 
@@ -41,6 +42,7 @@ div {
 .division {
 	width: 100%;
 	min-height: 100%;
+	background-color:rgb(255,0,0,0);
 		/*border: 2px solid;*/
 }
 
@@ -358,4 +360,16 @@ blockquote:after {
 
 .footer-text{
 	color:#777;
+}
+
+.projects-left-panel{
+	margin-top: 80%;
+}
+
+.aboutMe-left-panel{
+	margin-top: 40%;
+}
+
+.projects-left-panel-image{
+	height: 60%;
 }

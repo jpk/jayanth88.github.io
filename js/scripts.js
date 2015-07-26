@@ -34,7 +34,7 @@ function shufflePeriodically(){
 	var tagLine=["I am a huge fan of Lord of the Rings!",
 							"Color schemes & typography are topics of my interest!",
 							"When not staring at a screen, I am usually at the gym.",
-							"I prefer playing as a tank in LOL",
+							"I prefer playing as a tank in DOTA",
 							"I enjoy designing & front-end development",
 							"Coldplay,Mettalica,Linkin Park.. etc. are just a few of my favorite music bands",
 							"Software Developer."];
