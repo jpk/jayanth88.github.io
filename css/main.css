@@ -181,7 +181,7 @@ blockquote:after {
   position: absolute;
   content: " ";
   width: 3px;
-	  background-color: #AFD5DE;
+	  background-color: #D5E4E8;
   left: 50%;
   margin-left: -1.5px;
 }
@@ -273,19 +273,19 @@ blockquote:after {
   right: auto;
 }
 .timeline-badge.primary {
-  background-color: #2e6da4 !important;
+  background-color: #0A5369 !important;
 }
 .timeline-badge.success {
-  background-color: #3f903f !important;
+  background-color: #16660B !important;
 }
 .timeline-badge.warning {
-  background-color: #f0ad4e !important;
+  background-color: #BA7F11 !important;
 }
 .timeline-badge.danger {
   background-color: #d9534f !important;
 }
 .timeline-badge.info {
-  background-color: #5bc0de !important;
+  background-color: #785411 !important;
 }
 .timeline-title {
   margin-top: 0;
