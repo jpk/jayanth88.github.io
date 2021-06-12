@@ -337,8 +337,17 @@ blockquote:after {
 
 
 .fa-briefcase{
-  margin-top:4px;
-  width: 20%;
+  margin-top: 6;
+  width: 21%;
+  margin-right: 12;
+}
+
+.timeline-badge.warning {
+  background-color: #886014 !important;
+}
+
+.timeline-badge.success {
+  background-color: #205503 !important;
 }
 
 .active{
