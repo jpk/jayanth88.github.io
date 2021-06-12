@@ -337,7 +337,8 @@ blockquote:after {
 
 
 .fa-briefcase{
-	margin-top:4px;
+  margin-top:4px;
+  width: 20%;
 }
 
 .active{
